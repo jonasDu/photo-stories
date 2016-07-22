@@ -1,0 +1,12 @@
+.idea/
+/server/node_modules/
+/server/.idea/
+/image-app/node_modules/
+/image-app/bower_components/
+/image-app/coverage/
+/image-app/.sass-cache/
+/image-app/.idea/
+/image-app/.tmp/
+/image-app/dist/
+/image-app/typings/
+/image-app/npm-debug.log

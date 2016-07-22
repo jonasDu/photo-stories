@@ -1,0 +1,33 @@
+.gallery-image {
+  cursor: pointer;
+  margin-bottom: $grid-gutter-width;
+  &__container {
+    position: relative;
+    width: 100%;
+    display: block;
+    $root: &;
+    &__visualization{
+
+    }
+    &__description {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+      width: 100%!important;
+      height: 0%;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.44);
+      transition: height 100ms linear;
+      &__text {
+        color: white;
+        padding: 8px;
+      }
+    }
+    &:hover {
+      #{$root}__description {
+        height: 100%;
+        transition: height 100ms linear;
+      }
+    }
+  }
+}
