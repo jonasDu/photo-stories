@@ -54,6 +54,21 @@ router.get('/', function(req, res) {
     res.json(response);
 });
 
+
+router.post('/login', function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    var response = {
+        "data": [
+            {
+                "success": true,
+                "user": "John",
+                "name": "John Doe"
+            }
+        ]
+    };
+    res.json(response);
+});
+
 // SERVE STATIC IMAGES
 app.use('/static', express.static(__dirname + '/static'));
 
