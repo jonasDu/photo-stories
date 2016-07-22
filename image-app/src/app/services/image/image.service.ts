@@ -59,7 +59,7 @@ export class ImageService implements ImageServiceInterface {
                 this.hasBeenLoaded = true;
                 // toggle loading state
                 this.isLoading = false;
-                // store imaage
+                // store images
                 this.images = response.data.data;
                 var tags_with_duplicates = [];
                 forEach(this.images, (image) => {
@@ -72,7 +72,7 @@ export class ImageService implements ImageServiceInterface {
                 });
                 // remove duplicate tags
                 this.tags = uniq(tags_with_duplicates);
-                promise.resolve(response.data.data);
+                promise.resolve( this.images );
             }, (response:angular.IHttpPromiseCallbackArg<Error>) => {
                 // just in case
                 this.isLoading = false;

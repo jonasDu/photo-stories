@@ -22,27 +22,26 @@ describe('ImageService', () => {
     });
 
     it('should retrieve images from the server', function () {
-        expect(true);
         var url = ENV.API;
         var mocked_response = {
-            "data": [
+            'data': [
                 {
-                    "label": 'Test 1',
-                    "url": "image_1.jpeg",
-                    "description": 'Lorem Ipsum',
-                    "tags": ["a", "b", "c"]
+                    'label': 'Test 1',
+                    'url': 'image_1.jpeg',
+                    'description': 'Lorem Ipsum',
+                    'tags': ['a', 'b', 'c']
                 },
                 {
-                    "label": 'Test 2',
-                    "url": "image_2.jpeg",
-                    "description": 'Lorem Impsum',
-                    "tags": ["a", "d", "e"]
+                    'label': 'Test 2',
+                    'url': 'image_2.jpeg',
+                    'description': 'Lorem Impsum',
+                    'tags': ['a', 'd', 'e']
                 }
             ]
         };
         httpBackend.expect('GET', url).respond(200, mocked_response);
         var responsePromise = imageService.getImages();
-        responsePromise.then(function(res) {
+        responsePromise.then(function(res:any) {
             // expect two images
             expect(res.length).toEqual(2);
         }, function() {
@@ -53,7 +52,6 @@ describe('ImageService', () => {
     });
 
     it('should not load images twice', function () {
-        expect(true);
         var url = ENV.API;
         httpBackend.expect('GET', url).respond(200, []);
         imageService.getImages();
@@ -62,28 +60,27 @@ describe('ImageService', () => {
     });
 
     it('should get all available tags', function () {
-        expect(true);
         var url = ENV.API;
         var mocked_response = {
-            "data": [
+            'data': [
                 {
-                    "label": 'Test 1',
-                    "url": "image_1.jpeg",
-                    "description": 'Lorem Ipsum',
-                    "tags": ["a", "b", "c"]
+                    'label': 'Test 1',
+                    'url': 'image_1.jpeg',
+                    'description': 'Lorem Ipsum',
+                    'tags': ['a', 'b', 'c']
                 },
                 {
-                    "label": 'Test 2',
-                    "url": "image_2.jpeg",
-                    "description": 'Lorem Impsum',
-                    "tags": ["a", "d", "e"]
+                    'label': 'Test 2',
+                    'url': 'image_2.jpeg',
+                    'description': 'Lorem Impsum',
+                    'tags': ['a', 'd', 'e']
                 }
             ]
         };
         httpBackend.expect('GET', url).respond(200, mocked_response);
         imageService.getTags().then((res) => {
             // should only return unique values
-            expect(res).toEqual(["a","b","c","d","e"])
+            expect(res).toEqual(['a','b','c','d','e']);
         });
         httpBackend.flush();
     });

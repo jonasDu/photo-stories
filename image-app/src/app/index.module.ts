@@ -4,6 +4,7 @@ import {HomeController} from './views/home/home.controller';
 import {routerConfig} from './index.route';
 import {NavigationController} from './views/navigation/navigation.controller';
 import {ImageService} from './services/image/image.service';
+import {UserService} from './services/user/user.service';
 declare var moment:moment.MomentStatic;
 
 module app {
@@ -29,5 +30,6 @@ module app {
         .config(routerConfig)
         .controller('NavigationController', NavigationController)
         .controller('HomeController', HomeController)
-        .service('ImageService', ImageService);
+        .service('ImageService', ImageService)
+        .service('UserService', UserService);
 }

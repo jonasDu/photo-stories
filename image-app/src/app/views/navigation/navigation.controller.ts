@@ -1,10 +1,9 @@
 export interface NavigationControllerInterface {
-
 }
 
 export class NavigationController implements NavigationControllerInterface {
-    static $inject = ['$log'];
+    static $inject = [];
     constructor() {
-        // nothing to do here
+        // nothing to do
     }
 }
