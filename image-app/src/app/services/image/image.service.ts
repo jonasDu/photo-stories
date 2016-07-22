@@ -1,6 +1,6 @@
 import forEach = require('lodash/forEach');
 import uniq = require('lodash/uniq');
-export interface ImageApiResponce {
+export interface ImageApiResponse {
     data: ImageInterface[];
 }
 export interface ImageInterface {
@@ -54,7 +54,7 @@ export class ImageService implements ImageServiceInterface {
             method: 'GET'
         };
         this.$http(httpConfigObj)
-            .then((response:angular.IHttpPromiseCallbackArg<ImageApiResponce>) => {
+            .then((response:angular.IHttpPromiseCallbackArg<ImageApiResponse>) => {
                 // if data has already been loaded there is no need to load it again
                 this.hasBeenLoaded = true;
                 // toggle loading state
