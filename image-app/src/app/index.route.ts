@@ -19,6 +19,7 @@ export function routerConfig($stateProvider:angular.ui.IStateProvider, $urlRoute
             resolve: {
                 images: ['$q', 'ImageService', ($q:angular.IQService, ImageService:ImageServiceInterface) => {
                     var promise = $q.defer();
+                    // load images and inject the result into the controller
                     ImageService.getImages().then((images:ImageInterface[]) => {
                         promise.resolve(images);
                     });
@@ -26,6 +27,7 @@ export function routerConfig($stateProvider:angular.ui.IStateProvider, $urlRoute
                 }],
                 tags: ['$q', 'ImageService', ($q:angular.IQService, ImageService:ImageServiceInterface) => {
                     var promise = $q.defer();
+                    // load tags and inject the result into the controller
                     ImageService.getTags().then((tags:string[]) => {
                         promise.resolve(tags);
                     });

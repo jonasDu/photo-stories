@@ -11,6 +11,11 @@ export class HomeController implements HomeControllerInterface {
         this.selected_tag = '';
     }
 
+    /**
+     * opens the ligthbox in a bootstrap modal
+     * @param images
+     * @param index
+     */
     openLightboxModal(images:ImageInterface[], index:number) {
         this.lightbox.openModal(images, index);
     };
